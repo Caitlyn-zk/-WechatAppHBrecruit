@@ -1,0 +1,24 @@
+<!--pages/information/information.wxml-->
+<navbar parameter='{{parameter}}'></navbar>
+<wxs src="../../utils/filter.wxs" module="utils"></wxs>
+<view class="information" wx:if="{{infoState === 200 && infoList.length > 0}}">
+  <view wx:for="{{infoList}}" wx:key="id"  data-id="{{item.ms_id}}" data-read="{{item.is_read}}" data-index="{{index}}"  class="{{item.read ? 'info on' : 'info'}}" bindtap="onSee">
+    <view class="company-info">
+      <view class="icon {{!item.read ? 'have-read':'unread' }}"></view>
+      <view class="company-name">
+        <text>{{item.ms_title}}</text>
+      </view>
+      <view class="see-time">{{utils.dateFormat(item.add_time)}}</view>
+    </view>
+    <view class="see-tipe">
+      <text>{{item.ms_content}}</text>
+    </view>
+  </view>
+  <view wx:if="{{loadingJudge}}" class="loading-tips">已全部加载</view>
+</view>
+<view wx:else class="no-resume" >
+  <view class="tips">
+    <image src="/images/no-info.png" height="231rpx" class="tips-image"></image>
+    <view class="tips-text">暂无消息</view>
+  </view>
+</view>

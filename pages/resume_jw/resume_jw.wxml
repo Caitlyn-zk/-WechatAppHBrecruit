@@ -1,0 +1,67 @@
+
+<!--pages/resume_jw/index.wxml-->
+<wxs src='../../utils/filter.wxs' module='util' />
+<navbar parameter='{{parameter}}'></navbar>
+<view class="person-infor">
+  <view class="page-body">
+    <form catchsubmit="formSubmit" catchreset="formReset">
+      <!-- 求职状态 -->
+      <view class="section page-section">
+         <view class="page-section-title">求职状态</view>
+        <picker bindchange="onPickerChangeJWant" mode="selector" value="{{wantArray.name}}"  range-key="{{'name'}}"  range="{{wantArray}}"  >
+          <view class="section-select">
+            <input class="weui-input picker" disabled="{{true}}" name="jwName" value="{{jwName}}" placeholder="请选择你的求职状态" />
+            <text class="iconfont icon-xiangyou icon-color"></text>
+          </view>
+        </picker>
+      </view>
+      <!-- 工作城市 -->
+      <view class="page-section">
+        <!--条件选择-->
+        <view class="page-section-title">工作城市</view>
+        <picker mode="region" bindchange="onRegionChangeCity" value="{{region}}" >
+          <view class="section-select">
+            <input class="weui-input" disabled="{{true}}" name="region" value="{{ area2_name ? area2_name+','+ area3_name:''}}" placeholder="请选择你的工作城市" />
+            <text class="iconfont icon-xiangyou icon-color"></text>
+          </view>
+        </picker>
+      </view>
+      <!-- 期望职位 -->
+      <view class="page-section">
+        <view class="page-section-title">期望职位</view>
+        <!-- <view class="weui-cells weui-cells_after-title">
+          <input class="weui-input" name="input" value="{{post_cate_name}}" placeholder="请输入期望职位" />
+        </view> -->
+        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiObjArray}}" range-key="{{'cate_name'}}">
+          <view  class="select">
+              <input class="weui-input" disabled="{{true}}" name="post_name" value="{{post_cate_name}}" placeholder="请选择期望职位" />
+              <text class="iconfont icon-xiangyou icon-color"></text>
+            </view>
+        </picker>
+      </view>
+      <!-- 期望薪资 -->
+      <view class="section page-section">
+         <view class="page-section-title">期望薪资</view>
+        <view class="salary-select">
+          <picker  value="{{min_salary}}" mode="selector" value="{{salaryNumber.value}}"  range-key="{{'label'}}" range="{{salaryNumber}}"  bindchange="onMinSalary">
+            <view  class="select">
+              <input class="weui-input" disabled="{{true}}" name="min_salary" value="{{util.filter(salaryNumber,min_salary)}}" placeholder="最小薪资" />
+              <text class="iconfont icon-xiangyou icon-color"></text>
+            </view>
+          </picker>
+          <view class="interval"></view>
+          <picker  value="{{max_salary}}" mode="selector" value="{{salaryNumber.value}}"  range-key="{{'label'}}"  range="{{salaryNumber}}"  bindchange="onMaxSalary"  >
+            <view class="select" >
+              <input class="weui-input" disabled="{{true}}" name="max_salary" value="{{util.filter(salaryNumber,max_salary)}}" placeholder="最大薪资" />
+              <text class="iconfont icon-xiangyou icon-color"></text>
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="btn-area">
+         <button class="btn-area-butt" formType="submit">保存</button>
+      </view>
+    </form>
+  </view>
+
+</view>

@@ -1,0 +1,26 @@
+    <view name="el-zoom-in-top"  >
+        <view wx:if="{{parameter.type == 1}}">
+            <view class="filter-content two-level">
+                <view class="father">
+                    <view  wx:for="{{parameter.list}}" :key="index">
+                        <view class="father-cate-name {{parameter.index == index ? 'selection':'not'}}" bindtap="onFatherSelect(index)" >{{ item.cate_name }}</view>
+                    </view>
+                </view>
+                <view class="son">
+                    <view  wx:for="{{subClass}}" :key="index" >
+                        <view class="son-cate-name" bindtap="onSubClass(child.id, child.cate_name)" :class="parameter.code == child.id || id == child.id ? 'selection':'not'">{{ child.cate_name }}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="button">
+                <el-button type="primary" class="reset" bindtap="onReset">重置</el-button>
+                <el-button type="primary" class="complete" bindtap="onComplete">完成</el-button>
+            </view>
+        </view>
+        <view class="filter-content one-level" wx:if="{{parameter.type == 0}}">
+            <view wx:for="(item,index) in parameter.list" :key="index">
+                <view class="one-level-value" bindtap="onSelection(item.code)" :class="parameter.code == item.code ? 'selection':'not'">{{ item.value }} </view>
+                <el-viewider></el-viewider>
+            </view>
+        </view>
+    </view>

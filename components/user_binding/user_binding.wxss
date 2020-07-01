@@ -1,0 +1,40 @@
+/* pages/user_binding/user_binding.wxss */
+
+.binding .binding-logo {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width:136rpx;
+  height:136rpx;
+  margin-left: -68rpx;
+  background:rgba(5,215,151,1);
+  border-radius:50%;
+  text-align: center;
+  line-height: 136rpx;
+}
+.binding .binding-logo .compeny-name {
+  width:104rpx;
+  height:34rpx;
+  font-size:36rpx;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+}
+.binding .binding-but {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  margin-left: -315rpx;
+}
+.binding .binding-but button {
+  width:630rpx;
+  height:80rpx;
+  background:rgba(5,215,151,1);
+  border-radius:40rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+.binding .binding-but .binding-but-text {
+  font-size:28rpx;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+}

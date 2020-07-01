@@ -1,0 +1,114 @@
+
+page{
+  height: 100%;
+}
+
+.post-search-list{
+  background-color: #f5f5f5;
+}
+.search-input{
+  background-color: #fff;
+  padding: 20rpx 20rpx 0 20rpx;
+}
+.search-input input{
+  background-color: #F5F5F5;
+  height: 60rpx;
+  font-size: 28rpx;
+  width: 100%;
+  line-height: 60rpx;
+}
+.search-input .weui-search-bar__box{
+  background-color: #F5F5F5;
+  border-radius:4rpx;
+}
+/* 公共 */
+.screen-muster .icon{
+  border: none;
+  margin-left: 10rpx;
+  transform:rotate(0deg);
+  -webkit-transform:rotate(0deg); 
+  -moz-transform:rotate(0deg);  
+}
+.screen-muster .select-icon{
+  margin-left: 10rpx;
+  transform:rotate(180deg);
+  -webkit-transform:rotate(180deg);  
+  -moz-transform:rotate(180deg);  
+}
+/* 筛选  */
+.search-modular{
+  position:fixed;
+  z-index:1000;
+  background-color: #fff;
+  width: 100%;
+}
+.text-color {
+  color: #05D797;
+}
+.text-color-aconter {
+  color: #999999;
+}
+.iconfont {
+  margin-left: 5rpx;
+}
+.screen-muster{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 34rpx 43rpx;
+  background-color: #fff;
+  font-size: 24rpx;
+  color: #000000;
+  border-bottom: 2rpx solid #EEEEEE;
+}
+.screen-muster .city {
+  width: 33.33%;
+  display: flex;
+  align-items: center;
+}
+.screen-muster .city .option-name{
+  max-width: 150rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.screen-muster .salary{
+  width: 33.33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.screen-muster .salary .option-name{
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.screen-muster .post-type{
+  width: 33.33%;
+  display: flex;
+  align-items: center;
+}
+.screen-muster .post-type .option-name{
+  margin-left: auto;
+  margin-right: 0;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.tips{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+}
+.post-search-list .post-list{
+  padding-top: 210rpx;
+}
+
+/*  */
+.select{
+  color: #05D797;
+}
+.no-select{
+  color: #000000;
+}

@@ -1,0 +1,64 @@
+<!--pages/resume_info/info.wxml-->
+<navbar parameter='{{parameter}}'></navbar>
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="person-infor">
+  <view class="page-body">
+    <form catchsubmit="formSubmit" catchreset="formReset">
+      <!-- 项目名称 -->
+      <view class="page-section">
+        <view class="page-section-title">项目名称</view>
+        <view class="weui-cells weui-cells_after-title">
+          <input class="weui-input" name="projectName" value="{{projectName}}" bindblur="onProjectName" placeholder="请输入项目名称" />
+        </view>
+      </view>
+      <!-- 在校时间 -->
+      <view class="page-section">
+        <view class="page-section-title">项目时间</view>
+        <view class="page-item-endtime">
+          <picker mode="date" fields="month" value="{{begin_dt}}"   bindchange="onProjectStartTime">
+            <view  class="section-select">
+              <input class="weui-input" disabled="{{true}}" name="begin_dt" value="{{filter.moneyFormats(begin_dt)}}" placeholder="开始时间" />
+              <text class="iconfont icon-xiangyou icon-color"></text>
+            </view>
+          </picker>
+          <text class="arrow-division"></text>
+          <picker mode="date" fields="month" value="{{end_dt}}"   bindchange="onProjectEndTime">
+            <view  class="section-select">
+              <input class="weui-input" disabled="{{true}}" name="end_dt" value="{{filter.moneyFormats(end_dt)}}" placeholder="结束时间" />
+              <text class="iconfont icon-xiangyou icon-color"></text>
+            </view>
+          </picker>
+        </view>
+      </view>
+      <!-- 项目描述 -->
+      <view class="page-section">
+        <view class="page-section-title">项目描述</view>
+        <view class="weui-cells weui-cells_after-title">
+          <textarea class="weui-input" 
+              auto-height
+              placeholder-class="place-holder"
+              maxlength="200"
+              placeholder="请输入你的自我评价"
+              bindblur="bindTextAreaBlur"
+              bindinput="textareaInputs"
+              value="{{desc}}">
+          </textarea>
+        </view>
+      </view>
+      <view class="total-text">
+        <text>{{currentWordNumber | 0}}/200</text>
+      </view>
+      <view class="margin-bottom1010"></view>
+      <view class="btn-area" wx:if="{{id === 0 || length == 1}}">
+        <button class="btn-area-butt" formType="submit">保存</button>
+      </view>
+      <view class="detail-but" wx:else>
+        <button class="detail-but-follow" type="" plain="true" bindtap="onDel">
+          <text class="iconfont icon-shanchu icon-but"></text>
+          <view class="detail-fenxang-text"><text>删除</text></view>
+        </button>
+        <button class="detail-but-up" formType="submit">保存</button>
+      </view>
+    </form>
+  </view>
+</view>

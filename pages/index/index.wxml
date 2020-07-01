@@ -1,0 +1,41 @@
+<navbar parameter='{{parameter}}' ></navbar>
+<view class='index'>
+   <view class="search">
+      <view class="title">你想要什么工作</view>
+      <!-- <view class="search-input">
+         <input class="weui-input" confirm-type="search"  type="text" bindblur="onInput" placeholder="将会获取焦点"/>
+      </view> -->
+       <mp-searchbar placeholder="请输入职位名称" bindblur="onInput"></mp-searchbar>
+      <view class="search-recommend">
+         <view class="search-recommend-title">热门职位： </view>
+         <block wx:for="{{4}}" wx:key='index'>
+            <view  class="recommend-list" bindtap="onRecommend" data-value="web前端">web前端</view>
+         </block>
+      </view>
+   </view>
+   <view class="carousel">
+      <swiper  autoplay="{{true}}" circular="{{true}}" indicator-dots="{{true}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#fff" indicator-active-color="#05D797" style="width:100%;height:154rpx">
+         <block wx:for="{{4}}" wx:key='index' >
+            <swiper-item >
+               <image src="/images/ad.jpg" class="ad-image" bindtap="onAd"/>
+            </swiper-item>
+         </block>
+      </swiper>
+   </view>
+   <view class="post-content">
+      <view class="post-select">
+         <view class="post-name" wx:if="{{isLog && jobIntention}}">{{post_cate_name}}<text size="{{8}}"  class="iconfont icon-xiangyou"></text></view>
+         <view class="post-name" wx:else>为你推荐</view>
+      </view>
+      <view class="post-list" wx:if="{{postList.length > 0}}">
+         <block wx:for="{{postList}}" wx:key='index'>
+            <post-item item="{{item}}" good_staff="{{good_staff}}" data-postid="{{isLog && jobIntention ?item.post_id : item.id}}" bind:tap="onPostDetaill"></post-item>
+         </block>
+         <view wx:if="{{loadingJudge}}" class="tips">已全部加载</view>
+      </view>
+      <view wx:else class="no-data">
+         <image src="/images/no-data.png"></image>
+         <view class="tips"> 暂无数据</view>
+      </view>
+   </view>
+</view>

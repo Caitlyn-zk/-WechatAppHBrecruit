@@ -1,0 +1,50 @@
+<navbar parameter='{{parameter}}'></navbar>
+<view class='user' wx:if="{{bindPhone}}">
+   <view class='header  acea-row row-between-wrapper'>
+      <view class="info">
+         <view class='picTxt acea-row row-between-wrapper'>
+         <view class='pictrue' data-url='/pages/user_info/index'  bindtap='goPages'><image src="{{userInfo.avatar == '' || userInfo.avatar == undefined ? '../../images/personal/not-logged-in.png' : 'http://cdn.65ph.com/'+ userInfo.avatar }}"></image></view>
+            <view class='text text-weidenl'>
+               <view class='name-line1' wx:if="{{userInfo.real_name ===undefined}}" data-url='/pages/user_info/index' bindtap='goPages'>请登录</view>
+               <view wx:else>
+                  <view class='name line1' data-url='/pages/user_info/index' bindtap='goPages'>{{userInfo.real_name }}</view>
+                  <text bindtap='onBindPhone' class="binding-nav"><text class="binding">{{userInfo.phone == '' ? '绑定手机号': userInfo.phone}}</text></text>
+               </view>
+            </view>
+         </view>
+         <!-- 签到 -->
+         <!-- <navigator  hover-class='none' url='/pages/user_sgin/index'> <view class="sign-in">签到</view></navigator> -->
+      </view>
+   </view>
+   <view class='wrapper'>
+      <view class='myService'>
+         <view class='serviceList acea-row row-middle'>
+            <block class="" wx:for="{{serviceLsit}}" wx:key="id">
+               <view class="service" data-url='{{item.url}}' bindtap='goPages' wx:if="{{item.id !==3}}">
+                  <image src="{{item.icon}}" class="service-icon"></image>
+                  <view class="service-name">{{item.label}}</view>
+                  <!-- <mp-icon  icon="arrow" color="#999999" size="{{10}}"  class="icon-more"></mp-icon> -->
+                  <text class="iconfont icon-xiangyou icon-more"></text>
+                  <!-- <image src="/images/icon-more.png" class="icon-more"></image> -->
+               </view>
+               <button open-type="contact" bindcontact="handleContact" class="service" wx:else>
+                  <image src="{{item.icon}}" class="service-icon"></image>
+                     <view class="service-name">{{item.label}}</view>
+                     <text class="iconfont icon-xiangyou icon-more"></text>
+                  </button>
+            </block>
+         </view>
+      </view>
+   </view>
+   <!-- <image src='/images/support.png' class='support'></image> -->
+   <view class="public-number" wx:if="{{follow}}">
+      <view class="mask" bindtap="onClose"></view>
+      <view class="qr_code">
+         <image src="/images/official-account.png" ></image>
+      </view>
+   </view>
+</view>
+<view wx:else>
+   <bindPhone bind:myevent="onBind"></bindPhone>
+</view>
+<authorize bind:onLoadFun='onLoadFun' isGoIndex='{{isGoIndex}}' iShidden="{{iShidden}}" isAuto="{{isAuto}}"></authorize>

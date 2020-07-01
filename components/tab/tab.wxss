@@ -1,0 +1,32 @@
+
+.active{
+  color:#05D797;
+  /* height:62rpx; */
+  border-bottom:3px solid #05D797;
+}
+.no{
+  color:#999999;
+}
+.tab{
+  width:100%;
+  display:flex;
+  align-item:flex-end;
+  justify-content:space-around;
+  background-color:#fff;
+  height:62rpx;
+  font-size:28rpx;
+  z-index:999;
+  text-align:center;
+  line-height:62rpx;
+  box-shadow:4px 4px 10px #f2f2f2;
+  margin-top: 20rpx;
+}
+.tab-content{
+  overflow:scroll;
+}
+.tab-contents{
+  display:none;
+}
+.on{
+   display:block;
+}

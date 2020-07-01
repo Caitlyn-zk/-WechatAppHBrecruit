@@ -1,0 +1,21 @@
+<!--pages/user_post_apply/user_post_apply.wxml-->
+<navbar parameter='{{parameter}}'></navbar>
+<view>我的申请</view> -->
+<view class="user-apply" >
+  <view class="tab-model">
+    <tab tabTitle="{{tabData}}" positionTop="" paddingTop="" bindtoggle="onTab">
+    </tab>
+  </view>
+  <view class="apply-list" wx:if="{{post_list.length > 0 }}">
+    <block wx:for="{{post_list}}" wx:key='index'>
+      <post-item item="{{item}}" good_staff="{{good_staff}}" data-postid="{{item.post_id}}" bind:tap="onPostDetaill"></post-item>
+    </block>
+    <view wx:if="{{loadingJudge}}" class="tips">已全部加载</view>
+  </view>
+  <view wx:else class="no-resume" >
+    <view class="tips">
+      <image src="/images/no-resume.png" class="tips-image"></image>
+      <view class="tips-text">暂无记录</view>
+    </view>
+  </view>
+</view>

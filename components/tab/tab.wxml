@@ -1,0 +1,12 @@
+<view class="contain">
+  <view class="tab" style="top:{{positionTop}}">
+    <block wx:for="{{tabTitle}}" wx:key="{{index}}">
+      <view  class="tab-son {{num==index?'active':'no'}}" bindtap='toggle' data-index="{{index}}">{{item.label}}</view>
+    </block>
+  </view>
+  <view class="tab-content" style="padding-top:{{paddingTop}}">
+    <view wx:for="{{tabTitle}}"   class="tab-contents {{num==index?'on':''}}">
+      <slot name="{{index}}"></slot>
+    </view>
+  </view>
+</view>

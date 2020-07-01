@@ -1,0 +1,199 @@
+/* pages/post-detail/post-detail.wxss */
+.post-detail-main {
+  padding: 0;
+  margin: 0;
+  font-family:Microsoft YaHei;
+}
+.post-detail-info {
+  padding: 20rpx;
+  background: #fff;
+}
+.post-detail-info-name {
+  font-size: #333344;
+  font-size:32rpx;
+  /* padding-top: 15rpx; */
+  line-height: 54rpx;
+  font-family:Microsoft YaHei;
+  font-weight:bold;
+}
+.post-detail-info-button {
+  font-size: 30rpx;
+  line-height: 54rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  color: #FF7302;
+}
+.title{
+  color: #333344;
+  font-weight: bold;
+  font-size: 30rpx;
+  line-height: 54rpx;
+}
+.image{
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 28rpx;
+}
+.line{
+  margin: 0 20rpx;
+}
+/* 基本信息 */
+.post-detail-info .user-info{
+  font-size: 24rpx;
+  line-height: 54rpx;
+  color: #333344;
+}
+.post-detail-main .address {
+  line-height: 54rpx;
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+}
+.post-detail-main .address .mp-icon{
+  color: #05D797;
+}
+.post-detail-main .post-title{
+  font-size: 24rpx;
+  line-height: 54rpx;
+  margin-bottom: 20rpx;
+  color: #333344;
+}
+.post-detail-main .post-title .icon{
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 26rpx;
+  vertical-align: -1rpx;
+} 
+/* 工作经历 */
+.post-detail-main .post-detail-workfor{
+  padding: 20rpx;
+  background: #fff;
+  width: 100%;
+  margin-top: 20rpx;
+}
+.post-detail-workfor-info{
+  width: 100%;
+  line-height: 54rpx;
+}
+/* 内容 */
+.decs-text {
+  font-size: 24rpx;
+  color: #333344;
+  line-height: 46rpx;
+}
+.company-main {
+  display: flex;
+  justify-content: left;
+}
+.company-main .company-logo {
+  width: 90rpx;
+  height: 90rpx;
+  background: #05D797;
+}
+.company-main .company-logo image{
+  width: 90rpx;
+  height: 90rpx;
+  overflow: hidden;
+}
+.company-main .company-info{
+  margin-left: 32rpx;
+  width: 100%;
+}
+.company-main .company-info .company-name {
+  font-size:24rpx;
+  font-weight:400;
+  color:#333344;
+  margin-bottom: 10rpx;
+}
+.company-info .user-info {
+  display: block;
+  font-size: 24rpx;
+  height: 54rpx;
+  overflow: hidden;
+  line-height: 54rpx;
+}
+.company-info user-info text {
+  display: inline-block;
+}
+.company-info .user-info .work-for {
+  display: inline-block;
+}
+.similar-position {
+  height: 102rpx;
+  text-align: center;
+  line-height: 102rpx;
+  font-size:24rpx;
+  font-family:Microsoft YaHei;
+  font-weight:400;
+  color:#666666;
+}
+.similar-position-list {
+  padding-bottom: 108rpx;
+}
+.detail-but {
+  width:100%;
+  height:108rpx;
+  margin-top: 21rpx;
+  position:fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: left;
+  background:rgba(255,255,255,1);
+}
+.detail-but .detail-but-follow {
+ border: none;
+ margin-top: 15rpx;
+  width: 100rpx;
+  height: 78rpx;
+  padding: 0;
+}
+.detail-but-follow .detail-but-follow-text {
+  margin-top: 10rpx;
+  color: #333344;
+  height: 36rpx;
+}
+.detail-but-follow image {
+  display: inline-block;
+  height: 36rpx;
+  width: 36rpx;
+  vertical-align: 6rpx;
+}
+.detail-but-follow .detail-fenxang-text {
+  padding-top: 4rpx;
+  font-size:22rpx;
+  font-weight:400;
+  color:#333344;
+  letter-spacing: 0;
+}
+.detail-but .detail-but-up {
+  margin-top: 15rpx;
+  width:620rpx;
+  height:78rpx;
+  line-height: 78rpx;
+  border-color: #05d797;
+  background:#05d797;
+  border-radius: 8rpx;
+  font-size:30rpx;
+  font-weight:400;
+  color:#ffffff;
+}
+.detail-but .detail-but-up[disabled] {
+  background: #fff !important;
+  border:1px solid #333344 !important;
+  color: #333344 !important;
+}
+/* 无网络 */
+.no-resume .tips-image{
+  width: 100%;
+  height: 310rpx;
+}
+.loading-tips{
+  margin-top: 20rpx;
+  margin-bottom: 40rpx;
+  width: 100%;
+  text-align: center;
+}
+.no-resume .tips-text {
+  margin-top: -20rpx;
+}

@@ -1,0 +1,73 @@
+.two-level{
+  display: flex;
+  height: 50%;
+}
+.one-level{
+  height: 42%;
+  overflow-y: auto;
+  padding-bottom: 0.2rem;
+  padding-top: 0.3rem;
+}
+.one-level /deep/ .el-divider--horizontal{
+  margin: 0.3rem 0;
+}
+.selection{
+  color: #0097f9;
+}
+.not{
+  color: #000;
+}
+.filter-content{
+position: absolute;
+/* top: 1.72rem; */
+/* border: 0.01rem solid red; */
+width: 100%;
+background-color: #ffffff;
+z-index: 4;
+}
+.button{
+  position: absolute;
+  top: 49%;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 4;
+  /* height: 0.7rem; */
+  padding: 0.1rem 0 0.1rem  0.3rem;
+  text-align: center;
+
+}
+.button /deep/.el-button{
+  line-height: 0.1rem;
+}
+
+.filter-content .father{
+width: 30%;
+height: 99%;
+overflow-y: auto;
+background-color: #f2f2f2;
+}
+.filter-content .father .father-cate-name{
+text-align: center;
+margin: 0.4rem 0;
+}
+.filter-content .son {
+width:70%;
+height: 90%;
+padding: 0.4rem 0;
+}
+
+.filter-content .son .son-cate-name{
+width: 100%;
+text-align: center;
+margin-bottom: 0.4rem;
+margin-left: auto;
+margin-right: auto;
+font-size: 15px;
+/* border: 0.01rem solid red; */
+}
+.one-level-value{
+  width: 100%;
+  padding: 0 0 0 20rpx;
+  text-align: left;
+  font-size: 30rpx;
+}

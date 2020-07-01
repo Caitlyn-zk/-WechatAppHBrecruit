@@ -1,0 +1,15 @@
+/* pages/resume_info/info.wxss */
+page {
+  background: #fff;
+}
+.person-infor {
+  padding: 0 20rpx;
+  position: fixed;
+  left:0;
+  background-color: #fff;
+  font-family:Microsoft YaHei;
+  height: 100%;
+}
+.person-infor .page-body{
+  padding-bottom: 20rpx;
+}

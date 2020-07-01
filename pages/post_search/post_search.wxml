@@ -1,0 +1,38 @@
+
+<navbar parameter='{{parameter}}' ></navbar>
+<view class="post-search-list {{cityPopup || salaryPopup || postPopup ? 'container-ban' : ''}}" >
+  <view class="search-modular">
+    <view class="search-input" >
+      <mp-searchbar placeholder="请输入职位名称" bindblur="onSearchbar" bindfocus="onFocus" value="{{key}}"></mp-searchbar>
+    </view>
+    <view class="screen-muster" >
+      <view class="city" bindtap="onCity">
+        <view class="option-name {{citySelect !=='全国' ? 'select' :'no-select'}}">{{citySelect}}</view>
+        <text class="iconfont icon-xiangxia {{cityPopup ? 'select-icon' :'icon'}} {{citySelect !=='全国' ? 'text-color' :'text-color-aconter'}}" size="{{10}}"></text>
+      </view>
+      <view class="salary" bindtap="onSalary">
+        <view class="option-name {{salarySelect !=='薪资' ? 'select' :'no-select'}}">{{salarySelect}}</view>
+        <text class="iconfont icon-xiangxia {{salaryPopup ? 'select-icon' :'icon'}} {{salarySelect !=='薪资' ? 'text-color' :'text-color-aconter'}}" size="{{10}}"></text>
+      </view>
+      <view class="post-type" bindtap="onPostType">
+        <view class="option-name {{postType !=='职位类型' ? 'select' :'no-select'}}">{{postType}}</view>
+        <text class="iconfont icon-xiangxia {{postPopup ? 'select-icon' :'icon'}} {{postType !=='职位类型' ? 'text-color' :'text-color-aconter'}}" size="{{10}}"></text>
+      </view>
+    </view>
+  </view>
+  <view class="post-list">
+    <block wx:for="{{postList}}" :key="{{index}}">
+      <post-item item="{{item}}" class='post-item' data-postid="{{item.id}}" bind:tap="onPostDetaill"></post-item>
+    </block>
+    <view wx:if="{{loadingJudge}}" class="tips">已全部加载</view>
+  </view>
+  <view wx:if="{{postPopup}}">
+    <post-type  workType="{{workType}}" postTypeId="{{postTypeId}}" bindselect="onSelectWorkType" bindclose="onClose"></post-type>
+  </view>
+    <view wx:if="{{salaryPopup}}" >
+    <salay-select salaryData="{{salaryData}}" salaryId="{{salaryId}}" bindselect="onSelectSalary" bindclose="onClose"></salay-select>
+  </view>
+  <view wx:if="{{cityPopup}}" >
+    <city-select hotCityList="{{hotCityList}}" cityGroup="{{cityGroup}}" cityId="{{cityId}}" bindselect="onSelectCity" bindclose="onClose"></city-select>
+  </view>
+</view>

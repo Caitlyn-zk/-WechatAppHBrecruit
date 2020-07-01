@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "navbar": "/components/navbar/index",
+    "authorize": "/components/authorize/authorize",
+    "generalWindow": "/components/general-window/index",
+    "tab": "/components/tab/tab",
+    "post-item":"/components/post-item/post-item"
+  }
+}

@@ -1,0 +1,27 @@
+<!--pages/resume_info/info.wxml-->
+<navbar parameter='{{parameter}}'></navbar>
+<view class="person-infor">
+  <view class="page-body">
+    <form catchsubmit="formSubmit" catchreset="formReset">
+      <view class="page-section">
+        <view class="page-section-title">自我评价</view>
+        <view class="weui-cells weui-cells_after-title">
+          <textarea class="weui-input" 
+              auto-height
+              placeholder-class="place-holder"
+              maxlength="2000"
+              placeholder="请输入你的自我评价"
+              bindblur="bindTextAreaBlur"
+              value="{{details}}">
+          </textarea>
+        </view>
+      </view>
+      <view class="total-text">
+        <text>0/2000</text>
+      </view>
+    </form>
+  </view>
+  <view class="btn-area">
+    <button class="btn-area-butt" formType="submit">保存</button>
+  </view>
+</view>

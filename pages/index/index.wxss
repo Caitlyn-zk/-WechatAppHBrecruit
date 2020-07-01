@@ -1,0 +1,109 @@
+.index {
+  width: 100%;
+  height: 100%;
+  background-color: #F5F5F5;
+  font-family:Microsoft YaHei;
+}
+.search {
+  padding: 18rpx 20rpx 0 20rpx;
+}
+.search .title{
+  font-size:28rpx;
+  font-weight:bold;
+  color:#333344;
+  margin-bottom: 17rpx;
+}
+.search .search-input {
+  display: flex;
+  align-items: center;
+}
+.search .search-input .icon{
+  background-color: #fff;
+}
+.search .search-input input{
+  background-color: #fff;
+  height: 60rpx;
+  margin-top: 17rpx;
+  border-radius:4rpx;
+  font-size: 26rpx;
+  width: 100%;
+}
+.search .search-recommend{
+  margin-top: 22rpx;
+  display: flex;
+  align-items: center;
+}
+.search .search-recommend .search-recommend-title{
+  color: #999999;
+  font-size: 24rpx;
+
+}
+.search .search-recommend .recommend-list{
+  margin-right: 10rpx;
+  font-size: 24rpx;
+  color: #05D797;
+}
+/* 轮播图 */
+.carousel {
+  margin-top: 21rpx;
+  width: 100%;
+  height: 100%;
+}
+.carousel .ad-image{
+  width: 100%;
+  height: 100%;
+}
+/* 职位列表 */
+.post-content{
+  margin-top: 15rpx;
+  width: 100%;
+}
+.post-content .post-select{
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  line-height: 28rpx;
+  padding: 17rpx 20rpx;
+  border-bottom: 1rpx solid #F5F5F5;
+}
+.post-content .post-select .post-name{
+  color: #232323;
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+}
+.post-content .post-select .post-name .icon{
+  margin-left: 5rpx;
+}
+.post-content .post-select .edit{
+  color: #05D797;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 0;
+}
+.post-content .post-select .edit .icon {
+  margin-left: 5rpx;
+}
+.tips{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+}
+/* 没有数据 */
+.no-data{
+  height: 100%;
+  margin-top: 150rpx;
+  text-align: center;
+}
+.no-data image{
+  width: 530rpx;
+  height: 369rpx;
+}
+.no-data .tips{
+  margin-top: -150rpx;
+  color: #666666;
+  font-size: 32rpx;
+}

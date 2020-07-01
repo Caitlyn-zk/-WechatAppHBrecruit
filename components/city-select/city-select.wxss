@@ -1,0 +1,67 @@
+
+.selection{
+  border: 2rpx solid #05D797;
+  color: #05D797;
+}
+.no{
+  border: 2rpx solid #999999;
+  color: #999999;
+}
+.mask{
+  width:100%;
+  height:100%;
+  position:fixed;
+  background-color:#999;
+  z-index:1;
+  top:0;
+  left:0;
+  opacity:0.5;
+}
+.city-select {
+}
+.city-select .content{
+  position:fixed;
+  width: 100%;
+  background-color:#fff;
+  z-index:999;
+  height: 50%;
+  /* top: 330rpx; */
+  /* padding-top: 20rpx; */
+  /* padding: 20rpx 20rpx 0 20rpx; */
+  /* border: 1rpx solid red; */
+}
+.city-select .title{
+  margin-left: 20rpx;
+  padding-top: 20rpx;
+  color: #999999;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+ /* 热门城市 */
+ .city-select .city-list{
+  width: 100%;
+  /* margin-top: 20rpx; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  padding: 20rpx 20rpx 0 20rpx;
+  /* border: 1rpx solid red; */
+}
+.city-name{
+  padding: 18rpx 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  margin-bottom: 20rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+.city-name text{
+  width: 100%;
+  /* border: 1rpx solid red; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

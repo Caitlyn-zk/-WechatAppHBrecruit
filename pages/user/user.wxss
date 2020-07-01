@@ -1,0 +1,130 @@
+.user {font-family: Microsoft YaHei;}
+.user .header{
+  height:146rpx;
+  position:relative;
+  margin: 28rpx 0;
+  color: #333344;
+}
+.user .header .info {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 0rpx;
+  height: 146rpx;
+}
+.user .header .picTxt .pictrue{
+  width:110rpx;
+  height:110rpx;
+  border-radius: 50%;
+  margin-top: 18rpx;
+  margin-left: 30rpx;
+}
+.user .header .picTxt .pictrue image{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  z-index: 1;
+}
+.user .header .picTxt .text{
+  width:434rpx;
+  color:#333344;
+  margin-left: 20rpx;
+  margin-right: auto;
+  margin-top: 22rpx;
+}
+.user .header .picTxt .text .name{
+  font-size:30rpx;
+  font-weight:bold;
+  color:#333344;
+  letter-spacing: 1rpx;
+  margin-bottom: 15rpx;
+}
+.user .header .picTxt .text .name-line1 {
+  font-size:30rpx;
+  font-weight:bold;
+  color:#333344;
+  letter-spacing: 1rpx;
+  margin-bottom: 15rpx;
+  line-height: 70rpx;
+}
+.user .binding{
+  font-size: 28rpx;
+  color:#333344;
+}
+.user .binding-nav.navigator-hover {
+  outline: none;
+  background: none;
+  opacity: 1;
+}
+.service.navigator-hover {
+  outline: none;
+  background: #fff;
+  opacity: 1;
+}
+.user .wrapper{
+  padding:0;
+}
+.user .wrapper .myService{
+  margin-top:15rpx;
+  border-radius:10rpx;
+}
+.user .wrapper .myService .serviceList{padding:0rpx 0rpx;}
+.service {
+  display: flex;
+  width: 100%;
+  height: 80rpx;
+  padding: 0 28rpx;
+  align-items: center;
+  margin-bottom: 30rpx;
+  background: #fff;
+}
+.sign-in {
+  background-color: #0097f9;
+  color: #ffffff;
+  font-size: 30rpx;
+  border-radius: 30rpx;
+  padding: 10rpx 30rpx;
+  width:120rpx;
+  margin-left: auto;
+  margin-right: 20rpx;
+  margin-top: -80rpx;
+}
+.service .service-name {
+  font-size:28rpx;
+  line-height: 60rpx;
+  color:#333344;
+  margin-left: 20rpx;
+}
+.service .service-icon {
+  width: 30rpx;
+  height: 30rpx;
+}
+.service .icon-more {
+  margin-right: 0;
+  margin-left: auto;
+  color: #999;
+}
+/* 绑定手机号 */
+
+/* 关注公众号 */
+.public-number .mask{
+  width:100%;
+  height:100%;
+  position:fixed;
+  background-color: #000000;
+  z-index:1;
+  top:0;
+  left:0;
+  opacity:0.5;
+}
+.public-number .qr_code{
+  width: 100%;
+  position:fixed;
+  top: 25%;
+  left:0;
+  text-align: center;
+  z-index: 10;
+}
+.public-number .qr_code image{
+  width: 598rpx;
+  height: 732rpx;
+}

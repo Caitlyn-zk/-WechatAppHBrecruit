@@ -1,0 +1,65 @@
+<!--pages/resume_info/info.wxml-->
+<navbar parameter='{{parameter}}'></navbar>
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="person-infor">
+  <view class="main-title">
+    <view class="title-num">
+      <text class="title-step">2</text>/<text>3</text>
+    </view>
+    <view class="title-text">请填写教育经历</view>
+  </view>
+  <view class="page-body">
+    <form catchsubmit="formSubmit" catchreset="formReset">
+      <!-- 学校名称 -->
+      <view class="page-section">
+        <view class="page-section-title">学校名称</view>
+        <view class="weui-cells weui-cells_after-title">
+          <input class="weui-input" name="school" value="{{school}}" bindblur="schollValue" placeholder="请输入学校名称" />
+        </view>
+      </view>
+      <!--学历-->
+      <view class="section page-section">
+        <view class="page-section-title">学历</view>
+        <picker bindchange="onPickerChangeEdu" mode="selector" value="{{eduType.label}}"  range-key="{{'label'}}"  range="{{eduType}}">
+          <view class="section-select">
+            <input class="weui-input picker" name="edu" value="{{filter.filter(eduType,edu)}}" placeholder="请输入学历" />
+            <text class="iconfont icon-xiangyou icon-color"></text>
+          </view>
+        </picker>
+      </view>
+      <!-- 专业 -->
+      <view class="page-section">
+        <view class="page-section-title">专业</view>
+        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiObjArray}}" range-key="{{'cate_name'}}">
+          <view  class="section-select">
+              <input class="weui-input" name="major" value="{{major}}" placeholder="请选择专业" />
+              <text class="iconfont icon-xiangyou icon-color"></text>
+            </view>
+        </picker>
+      </view>
+      <!-- 在校时间 -->
+      <view class="page-section">
+        <view class="page-section-title">在校时间</view>
+        <view class="page-item-endtime">
+          <picker mode="date" value="{{begin_dt}}" fields="month"  bindchange="onStartTime">
+            <view  class="section-select">
+              <input class="weui-input" name="begin_dt" value="{{begin_dt}}" placeholder="入学时间" />
+              <text class="iconfont icon-xiangyou icon-color"></text>
+            </view>
+          </picker>
+          <text class="arrow-division"></text>
+          <picker mode="date" value="{{end_dt}}" fields="month"  bindchange="onEndTimeChange">
+            <view  class="section-select">
+              <input class="weui-input" name="end_dt" value="{{end_dt}}" placeholder="毕业时间" />
+              <text class="iconfont icon-xiangyou icon-color"></text>
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="margin-bottom108"></view>
+      <view class="btn-area">
+        <button class="btn-area-butt" formType="submit" >下一步</button>
+      </view>
+    </form>
+  </view>
+</view>

@@ -1,0 +1,164 @@
+<!--pages/resume/resume.wxml-->
+<wxs src='../../utils/filter.wxs' module='filters' />
+<navbar parameter='{{parameter}}'></navbar>
+<!-- <text></text> -->
+<view class="resume-main" wx:if="{{resumeState == 200}}">
+    <!-- 姓名 -->
+    <view class="resume-info">
+      <view class="resume-info-button" bindtap="onEditInfo" >
+        <text class="iconfont  icon-bianji mp-icon-c"></text>
+          修改
+      </view>
+      <view class="resume-info-name">{{real_name}}</view>
+      <view class="user-info">
+        <text class="age">{{age}}</text><text class="line">|</text>
+        <text class="work-for">{{work_for}}</text><text class="line">|</text>
+        <text class="area">{{userInfoList.user_info.live_in_area2_name}}/{{userInfoList.user_info.live_in_area3_name}}</text>
+      </view>
+      <view class="phone">
+        <image src="/images/icon/icon-phone.png" class="icon"></image>
+        <text>{{phone}}</text>
+      </view>
+      <view class="email">
+        <image src="/images/icon/icon-email.png" class="icon"></image>
+        <text>{{userInfoList.user_info.email}}</text>
+      </view>
+    </view>
+    <!-- 求职意向 -->
+    <view class="resume-jw">
+      <view class="resume-info-button" bindtap="onEditJW">
+        <text class="iconfont  icon-bianji mp-icon-c"></text>
+          编辑
+      </view>
+      <view class="title">求职意向</view>
+      <view class="jw-info">
+        <image src="/images/icon/icon-edu.png" class="icon"></image>
+        <text>求职状态：{{filters.filter(workType,jwList.privacy_state)}},{{filters.filter(inTime,jwList.in_time)}}</text>
+      </view>
+      <view class="jw-info">
+        <image src="/images/icon/icon-post.png" class="icon"></image>
+        <text>期望职位：{{jwList.post_cate_name}}</text>
+      </view>
+      <view class="jw-info">
+        <image src="/images/icon/icon-work-city.png" class="icon"></image>
+        <text>工作城市：{{jwList.area2_name}}/{{jwList.area3_name}}</text>
+      </view>
+      <view class="jw-info">
+        <image src="/images/icon/icon-salary.png" class="icon"></image>
+        <text>期望薪资：{{filters.filter(salaryNumber,jwList.min_salary)}} - {{filters.filter(salaryNumber,jwList.max_salary)}}</text>
+      </view>
+    </view>
+    <!-- 工作经历 -->
+    <view class="resume-workfor">
+      <view class="title-muster">
+        <view class="title">工作经历</view>
+        <view class="add" bindtap="onAddWorkFor">
+          <text style="font-size:30rpx;margin-top: -7rpx;">+</text>
+          <text>添加</text>
+        </view>
+      </view>
+      <block wx:for="{{workList}}" wx:key="index" wx:for-item="work">
+        <view class="resume-workfor-info">
+          <view class="org-name">
+            <image src="/images/icon/icon-city.png" class="image"></image>
+            <text>{{work.company}}</text>
+            <text class="iconfont  icon-bianji mp-icon-c edit" data-id="{{index}}" bindtap="onEditWorkFor"></text>
+          </view>
+          <view class="time">{{filters.moneyFormats(work.begin_dt)}} 至 {{filters.moneyFormats(work.end_dt)}}</view>
+          <view class="muster">
+            <view class="post-name">{{work.post_name}}</view>
+            <view class="salary">{{filters.filter(salary,work.salary)}}/月</view>
+          </view>
+          <rich-text class="decs-text" nodes="{{work.desc}}"></rich-text>
+        </view>
+      </block>
+    </view>
+    <!-- 教育经历 -->
+    <view class="resume-edu">
+      <view class="title-muster">
+        <view class="title">教育经历</view>
+        <view class="add" bindtap="onAddEdu">
+          <text style="font-size:30rpx;margin-top: -7rpx;">+</text>
+          <text>添加</text>
+        </view>
+      </view>
+      <block wx:for="{{educationList}}" wx:key="index" wx:for-item="edu">
+        <view class="resume-edu-info">
+          <view class="edu-name">
+            <image src="/images/icon/icon-school.png" class="image"></image>
+            <text>{{edu.school}}</text>
+            <text class="iconfont  icon-bianji mp-icon-c edit" data-id="{{edu.id}}" bindtap="onEditEdu"></text>
+            <!-- <mp-icon icon="pencil" color="#05D797" class="edit" size="{{15}}" data-id="{{edu.id}}" bindtap="onEditEdu"></mp-icon> -->
+          </view>
+          <view class="time">{{filters.moneyFormats(edu.begin_dt)}} 至 {{filters.moneyFormats(edu.end_dt)}}</view>
+          <view class="muster">
+            {{filters.filter(minEdu,edu.edu)}}<text class="line">|</text>{{filters.filter(tzList,edu.is_tz)}}<text class="line">|</text>{{edu.major}}
+          </view>
+        </view>
+      </block>
+    </view>
+    <!-- 项目经历 -->
+    <view class="resume-project">
+      <view class="title-muster">
+        <view class="title">项目经历</view>
+        <view class="add" bindtap="onAddProject">
+          <text style="font-size:30rpx;margin-top: -7rpx;">+</text>
+          <text>添加</text>
+        </view>
+      </view>
+      <block wx:for="{{projectList}}" wx:key="index"  wx:for-item="pro">
+        <view class="resume-project-info">
+          <view class="project-name">
+            <image src="/images/icon/icon-project.png" class="image"></image>
+            <text>{{pro.name}}</text>
+            <text class="iconfont  icon-bianji mp-icon-c edit" data-id="{{index}}" bindtap="onEditProject"></text>
+            <!-- <mp-icon icon="pencil" color="#05D797" class="edit" size="{{15}}" data-id="{{index}}" bindtap="onEditProject"></mp-icon> -->
+          </view>
+          <view class="time">{{filters.moneyFormats(pro.begin_dt)}} 至 {{filters.moneyFormats(pro.end_dt)}}</view>
+          <rich-text class="decs-text" nodes="{{pro.desc}}"></rich-text>
+        </view>
+      </block>
+    </view>
+    <!-- 证书 -->
+    <view class="resume-cert">
+      <view class="title-muster">
+        <view class="title">获得证书</view>
+        <view class="add" bindtap="onAddCert">
+          <text style="font-size:30rpx; margin-top: -7rpx;">+</text>
+          <text>添加</text>
+        </view>
+      </view>
+      <block wx:for="{{certList}}" wx:key="index"  wx:for-item="cert">
+        <view class="resume-cert-info">
+          <view class="cert-name">
+            <image src="/images/icon/icon-cert.png" class="image"></image>
+            <text>{{cert.name}}</text>
+            <text class="iconfont  icon-bianji mp-icon-c edit" data-id="{{index}}" bindtap="onEditCert"></text>
+            <!-- <mp-icon icon="pencil" color="#05D797" class="edit" size="{{15}}" data-id="{{index}}" bindtap="onEditCert"></mp-icon> -->
+          </view>
+          <view class="cert-time">{{cert.get_dt}}</view>
+        </view>
+      </block>
+    </view >
+  <!-- 自我评价 -->
+  <!-- <view class="self-assessment">
+    <view class="resume-info-button" bindtap="onEditAssessment">
+      <text class="iconfont  icon-bianji mp-icon-c edit" data-id="{{index}}" bindtap="onEditProject"></text>
+        修改
+    </view>
+    <view class="title">自我评价</view>
+    <view class="assessment">
+      <rich-text class="decs-text" nodes="{{assessment}}" ></rich-text>
+    </view>
+  </view> -->
+</view>
+<view wx:else class="no-resume">
+  <view class="tips">
+    <image src="/images/no-resume.png" height="378rpx" class="tips-image"></image>
+    <view class="tips-text">您当前没有简历</view>
+    <button type="primary" class="button" bindtap="onResume">{{tipsButton}}</button>
+  </view>
+</view>
+
+<authorize bind:onLoadFun='onLoadFun' isGoIndex='{{isGoIndex}}' iShidden="{{iShidden}}" isAuto="{{isAuto}}"></authorize>
+

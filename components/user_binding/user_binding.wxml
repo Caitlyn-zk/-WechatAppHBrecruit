@@ -1,0 +1,13 @@
+<!--pages/user_binding/user_binding.wxml-->
+<!-- <text>pages/user_binding/user_binding.wxml</text> -->
+<navbar parameter='{{parameter}}'></navbar>
+<view class="binding">
+  <view class="binding-logo">
+    <text class="compeny-name">环科宝</text>
+  </view>
+  <view class="binding-but">
+    <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+      <text class="binding-but-text">绑定手机号登录</text>
+    </button>
+  </view>
+</view>

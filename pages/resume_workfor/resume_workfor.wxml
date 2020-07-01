@@ -1,0 +1,72 @@
+<!--pages/resume_workfor/resume_workfor.wxml-->
+<wxs src='../../utils/filter.wxs' module='util' />
+<navbar parameter='{{parameter}}'></navbar>
+<view class="work-for">
+  <form catchsubmit="formSubmit" catchreset="formReset">
+    <view class="title">公司名称</view>
+    <input class="weui-input" name="company" value="{{company}}" bindblur="onCompany" placeholder="请输入公司名称" />
+    <view class="title">职位名称</view>
+    <!-- <input class="weui-input" name="input" value="{{post_name}}" placeholder="请输入姓名" /> -->
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiObjArray}}" range-key="{{'cate_name'}}">
+      <view  class="select">
+        <input class="weui-input" disabled="{{true}}" name="post_name" value="{{post_name}}" placeholder="请选择期望职位" />
+        <text class="iconfont icon-xiangyou icon-color"></text>
+      </view>
+    </picker>
+    <view class="title">在职时间</view>
+    <view class="time-select">
+      <picker mode="date" value="{{begin_dt}}" fields="month"  bindchange="onStartTime">
+        <view  class="select">
+          <input class="weui-input" disabled="{{true}}" name="begin_dt" value="{{util.moneyFormats(begin_dt)}}" placeholder="入职时间" />
+          <text class="iconfont icon-xiangyou icon-color"></text>
+        </view>
+      </picker>
+      <view class="interval"></view>
+      <picker mode="date" value="{{end_dt}}" fields="month" bindchange="onEndTime">
+        <view class="select" >
+          <input class="weui-input" disabled="{{true}}" name="end_dt" value="{{util.moneyFormats(end_dt)}}" placeholder="请选择结束时间" />
+          <text class="iconfont icon-xiangyou icon-color"></text>
+        </view>
+      </picker>
+    </view>
+    <!-- <view class="title">所属行业</view>
+    <view class="select" >
+      <input class="weui-input" name="input" value="{{industry}}" placeholder="请选择所属行业" />
+      <mp-icon extClass="arrow" icon="arrow" color="#666" size="{{15}}"></mp-icon>
+    </view> -->
+    <view class="title">月薪</view>
+    <picker bindchange="onPickerChangeSalary" mode="selector" value="{{salary.label}}"  range-key="{{'label'}}"  range="{{salaryData}}">
+      <view class="select">
+        <input class="weui-input" disabled="{{true}}" name="salary" value="{{util.filter(salaryData,salary)}}" placeholder="请选择月薪" />
+        <text class="iconfont icon-xiangyou icon-color"></text>
+      </view>
+    </picker>
+    <view class="title">工作描述</view>
+    <!-- <editor id="editor" class="ql-container" placeholder="请输入工作描述" bindstatuschange="onStatusChange" bindready="onEditorReady">
+    </editor> -->
+    <textarea class="textarea" 
+        name="desc"
+        auto-height
+        placeholder-class="place-holder"
+        maxlength="200"
+        placeholder="请输入你的自我评价"
+        bindblur="bindTextAreaBlur"
+        bindinput="textareaInputs"
+        value="{{desc}}">
+    </textarea>
+    <view class="total-text">
+      <text>{{currentWordNumber | 0}}/200</text>
+    </view>
+    <view class="margin-bottom108"></view>
+    <view class="btn-area" wx:if="{{id === 0 || length == 1}}">
+      <button class="btn-area-butt" formType="submit">保存</button>
+    </view>
+    <view class="detail-but" wx:else>
+      <button class="detail-but-follow" type="" plain="true" bindtap="onDelWf">
+        <text class="iconfont icon-shanchu icon-but"></text>
+        <view class="detail-fenxang-text"><text>删除</text></view>
+      </button>
+      <button class="detail-but-up" formType="submit" >保存</button>
+    </view>
+  </form>
+</view>

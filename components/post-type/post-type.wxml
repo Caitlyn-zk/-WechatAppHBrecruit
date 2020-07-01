@@ -1,0 +1,11 @@
+<view class="post-type-popup">
+  <view class="mask" bindtap="onClose"></view>
+  <view class="content" style="top:{{navH+181}}rpx">
+      <view class="title">职位类型</view>
+      <view class="post-type-list">
+        <block wx:for="{{workType}}" wx:key="index" wx:for-item="items">
+          <view class="post-type-name {{postTypeId == items.value ? 'selection' :'no'}}" bindtap="onSelect" data-value="{{items.value}}" data-label="{{items.label}}">{{items.label}}</view>
+        </block>
+      </view>
+  </view>
+</view>

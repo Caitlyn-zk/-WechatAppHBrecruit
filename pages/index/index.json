@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "navbar": "/components/navbar/index",
+    "post-item":"/components/post-item/post-item",
+    "mp-searchbar": "../components/searchbar/searchbar"
+  }
+}

@@ -1,0 +1,11 @@
+<view class="salay-popup">
+  <view class="mask" bindtap="onClose"></view>
+  <view class="content" style="top:{{navH+181}}rpx">
+      <view class="title">薪资范围</view>
+      <view class="salay-list">
+        <block wx:for="{{salaryData}}" wx:key="index" wx:for-item="items">
+          <view class="salay-name {{salaryId == items.value ? 'selection' :'no'}}" bindtap="onSelect" data-value="{{items.value}}" data-label="{{items.label}}">{{items.label}}</view>
+        </block>
+      </view>
+  </view>
+</view>

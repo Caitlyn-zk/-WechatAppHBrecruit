@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "navbar": "/components/navbar/index",
+    "home": "/components/home/index",
+    "post-item":"/components/post-item/post-item",
+    "mp-searchbar": "/components/searchbar/searchbar",
+    "post-type" : "/components/post-type/post-type",
+    "city-select": "/components/city-select/city-select",
+    "salay-select": "/components/salay-select/salay-select"
+  }
+}

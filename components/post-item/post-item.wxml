@@ -1,0 +1,24 @@
+<!--components/post-item/post-item.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter"></wxs>
+<view class="post-info">
+    <view class="post-info-left">
+      <view class="post-name">{{item.name !== undefined ? item.name : item.post_name}}</view>
+      <view class="org-type">地方性国企</view>
+      <view class="display-flex" wx:if="{{item.good_staff !== '' && item.good_staff}}">
+        <block wx:for="{{filter.getTags(item.good_staff)}}" wx:for-item="items" wx:for-index="index" wx:key="index">
+          <block wx:if="{{index <2}}">
+            <view class="post-skill">{{items}}</view>
+          </block>
+        </block>
+      </view>
+      <view class="org-name-muster">
+        <image src="/images/icon/icon-company.png" class="icon-company"></image>
+        <view class="org_name">{{item.org_name}}</view>
+      </view>
+    </view>
+    <view class="post-info-center">{{filter.filter(workType,item.work_type)}}</view>
+    <view class="post-info-right">
+      <view class="salary">{{filter.filter(salary,item.min_salary)+'-'+filter.filter(salary,item.max_salary)}}</view>
+      <view class="city">{{item.area2_name}}</view>
+    </view>
+</view>

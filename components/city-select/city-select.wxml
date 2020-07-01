@@ -1,0 +1,23 @@
+
+<view class="city-select" >
+  <view class="mask" bindtap="onClose"></view>
+  <scroll-view  class="content" scroll-y="true" style="top:{{navH+181}}rpx;">
+      <view class="title">热门城市</view>
+      <view class="city-list">
+        <block wx:for="{{hotCityList}}" wx:key="index" wx:for-item="items">
+          <view class="city-name {{cityId == items.code ? 'selection' :'no'}}" bindtap="onSelect" data-value="{{items.code}}" data-label="{{items.area_name}}">{{items.area_name}}</view>
+        </block>
+      </view>
+      <view>
+        <!-- {{cityGroup}} -->
+        <block wx:for="{{cityGroup}}" wx:key="letterIndex" wx:for-item="city">
+          <view class="title">{{city.firstChar}}</view>
+          <view class="city-list">
+            <block wx:for="{{city.cityList}}" wx:for-item="list">
+              <view class="city-name {{cityId == list.code ? 'selection' :'no'}}" bindtap="onSelect" data-value="{{list.code}}" data-label="{{list.area_name}}"><text>{{list.area_name}}</text></view>
+            </block>
+          </view>
+        </block>
+      </view>
+  </scroll-view>
+</view>

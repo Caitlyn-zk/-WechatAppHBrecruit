@@ -1,0 +1,80 @@
+<!--pages/resume_info/info.wxml-->
+<navbar parameter='{{parameter}}'></navbar>
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="person-infor">
+  <view class="page-body">
+    <form catchsubmit="formSubmit" catchreset="formReset">
+      <!-- 姓名 -->
+      <view class="page-section">
+        <view class="page-section-title">姓名</view>
+        <view class="weui-cells weui-cells_after-title">
+          <input class="weui-input" value="{{real_name}}" bindinput="nickName" name="real_name" placeholder="请输入姓名" />
+        </view>
+      </view>
+      <!--选择框-->
+      <view class="page-section">
+        <!--条件选择-->
+        <view class="page-section-title">性别</view>
+        <picker bindchange="bindPickerChange" value="{{gender}}" range="{{optionList}}">
+          <view  class="section-select">
+            <input class="weui-input" disabled="{{true}}" name="genderValue" value="{{genderValue}}" placeholder="请选择性别" />
+            <text class="iconfont icon-xiangyou icon-color"></text>
+          </view>
+        </picker>
+      </view>
+      <!-- 手机号 -->
+      <view class="page-section">
+        <view class="page-section-title">手机</view>
+        <view class="weui-cells weui-cells_after-title">
+          <input class="weui-input" name="phone" value="{{phone}}" bindinput="phoneValue" placeholder="请输入手机号" />
+        </view>
+      </view>
+      <!-- 电子邮箱 -->
+      <view class="page-section">
+        <view class="page-section-title">电子邮箱</view>
+        <view class="weui-cells weui-cells_after-title">
+          <input class="weui-input" name="email" value="{{email}}" bindinput="emailValue" placeholder="请输入邮箱号" />
+        </view>
+      </view>
+
+
+      <!-- 出生日期 -->
+      <view class="page-section">
+        <!--条件选择-->
+        <view class="page-section-title">出生年月</view>
+        <picker mode="date" value="{{birthday}}" fields="month"  bindchange="onBirthdayChange">
+          <view  class="section-select">
+            <input class="weui-input" disabled="{{true}}" name="birthday" value="{{birthday === null ? birthday : filter.moneyFormats(birthday)}}" placeholder="请选择出生年月" />
+            <text class="iconfont icon-xiangyou icon-color"></text>
+          </view>
+        </picker>
+      </view>
+      <!-- 参加工作 -->
+      <view class="page-section">
+        <!--条件选择-->
+        <view class="page-section-title">参加工作时间</view>
+        <picker mode="date" value="{{work_date}}" fields="month"  bindchange="onWorkTimeChange">
+          <view  class="section-select">
+            <input class="weui-input" disabled="{{true}}" name="work_date" value="{{ filter.moneyFormats(work_date)}}" placeholder="请选择参加工作时间" />
+            <text class="iconfont icon-xiangyou icon-color"></text>
+          </view>
+        </picker>
+      </view>
+      <!-- 现在居住地 -->
+      <view class="page-section">
+        <!--条件选择-->
+        <view class="page-section-title">现居住地</view>
+        <picker mode="region" bindchange="onRegionChange" value="{{regionValue}}" >
+          <view class="section-select">
+            <input class="weui-input" disabled="{{true}}" name="regionValue" value="{{ regionValue}}" placeholder="请选择现居住地" />
+            <text class="iconfont icon-xiangyou icon-color"></text>
+          </view>
+        </picker>
+      </view>
+      <view class="btn-area">
+        <button class="btn-area-butt" name="submit" form-type="submit" formType="submit" >保存</button>
+      </view>
+    </form>
+  </view>
+  
+</view>

@@ -1,0 +1,256 @@
+/* pages/resume/resume.wxss */
+.resume-main {
+  padding: 0;
+  margin: 0;
+  font-family:Microsoft YaHei;
+}
+.resume-info {
+  padding: 20rpx;
+  background: #fff;
+}
+.resume-info-name {
+  font-size: #333344;
+  font-size:34rpx;
+  /* padding-top: 15rpx; */
+  line-height: 54rpx;
+  font-family:Microsoft YaHei;
+  font-weight:bold;
+}
+.resume-info-button {
+  float: right;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin-top: 13rpx;
+  color: #05D797;
+}
+.resume-info-button .mp-icon{
+  margin-right: 5rpx;
+}
+.icon{
+  width: 28rpx;
+  height: 28rpx;
+}
+.title{
+  color: #333344;
+  font-weight: bold;
+  font-size: 34rpx;
+  line-height: 54rpx;
+}
+.title-muster{
+  display: flex;
+  justify-content: space-between;
+}
+.title-muster .add{
+  display: flex;
+  align-items: center;
+  width: auto;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  font-weight: bold;
+  color: #05D797;
+}
+.time {
+  color: #666;
+  font-size: 26rpx;
+  /* margin: 27rpx 0; */
+  line-height: 54rpx;
+}
+.image{
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 28rpx;
+}
+.line{
+  margin: 0 20rpx;
+}
+/* 基本信息 */
+.resume-info .user-info{
+  /* margin-top: 30rpx; */
+  font-size: 26rpx;
+  line-height: 54rpx;
+  color: #333344;
+  display: flex;
+  align-items: center;
+}
+
+.resume-info .user-info .line{
+ /* line-height: 20rpx; */
+  margin: 0 20rpx;
+}
+.resume-main .phone {
+  /* margin-top: 30rpx; */
+  line-height: 54rpx;
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+}
+.resume-main .phone .icon{
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 26rpx;
+}
+.resume-main .email{
+  /* margin-top: 30rpx; */
+  line-height: 54rpx;
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  /* margin-bottom: 10rpx; */
+}
+.resume-main .email .icon{
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 26rpx;
+}
+
+/* 求职意向 */
+.resume-main .resume-jw{
+  padding: 20rpx;
+  background: #fff;
+  width: 100%;
+  margin-top: 20rpx;
+}
+.resume-main .resume-jw .jw-info{
+  font-size: 24rpx;
+  line-height: 54rpx;
+  /* margin-top: 26rpx; */
+  /* font-weight: bold; */
+  display: flex;
+  align-items: center;
+  color: #333344;
+}
+.resume-main .resume-jw .jw-info .icon{
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 26rpx;
+} 
+/* 工作经历 */
+.resume-main .resume-workfor{
+  padding: 20rpx;
+  background: #fff;
+  width: 100%;
+  margin-top: 20rpx;
+}
+.resume-workfor-info{
+  width: 100%;
+  /* margin-top: 30rpx; */
+  line-height: 54rpx;
+}
+.resume-workfor-info .org-name{
+  /* border: 1rpx solid red; */
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+} 
+.resume-workfor-info .muster{
+  display: flex;
+  align-items: center;
+  /* margin-bottom: 27rpx; */
+}
+.resume-workfor-info .muster .post-name{
+  margin-left: 0;
+  margin-right: auto; 
+  font-size: 28rpx;
+  color: #333344;
+  font-weight: bold;
+}
+.resume-workfor-info .muster .salary{
+  margin-left: auto;
+  margin-right: 0; 
+  font-size: 26rpx;
+  color: #333344;
+  font-weight: bold;
+}
+
+.resume-workfor-info .details{
+  font-size: 26rpx;
+  color: #333344;
+}
+/* 教育经历 */
+.resume-main .resume-edu{
+  padding: 20rpx;
+  background: #fff;
+  width: 100%;
+  margin-top: 20rpx;
+}
+.resume-edu .edu-name{
+  /* border: 1rpx solid red; */
+  font-size: 28rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  /* margin-top: 39rpx; */
+  line-height: 54rpx;
+}
+.resume-edu-info .muster{
+  font-size: 26rpx;
+  line-height: 54rpx;
+}
+/* 项目经历 */
+.resume-main .resume-project{
+  padding: 20rpx;
+  background: #fff;
+  width: 100%;
+  margin-top: 20rpx;
+}
+.resume-project-info .project-name{
+  /* border: 1rpx solid red; */
+  font-size: 28rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  line-height: 54rpx;
+  /* margin-top: 39rpx; */
+}
+
+/* 证书 */
+.resume-main .resume-cert{
+  padding: 20rpx;
+  background: #fff;
+  width: 100%;
+  margin-top: 20rpx;
+  margin-bottom: 53rpx;
+}
+.resume-cert-info .cert-name{
+  font-size: 28rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  line-height: 54rpx;
+}
+.mp-icon-c {
+  margin-left: auto;
+  margin-right: 5rpx; 
+  color: #05D797;
+}
+.resume-cert-info .cert-time{
+  color: #999;
+  line-height: 54rpx;
+  font-size: 26rpx;
+}
+/* 自我评价 */
+.resume-main .self-assessment{
+  padding: 20rpx;
+  background: #fff;
+  width: 100%;
+  margin-top: 20rpx;
+  margin-bottom: 53rpx;
+}
+
+.decs-text {
+  font-size: 24rpx;
+  color: #333344;
+  line-height: 46rpx;
+}
+.no-resume .button{
+  font-weight: bold;
+  font-size: 30rpx;
+}
+.no-resume .tips-image{
+  width: 100%;
+  height: 378rpx;
+}

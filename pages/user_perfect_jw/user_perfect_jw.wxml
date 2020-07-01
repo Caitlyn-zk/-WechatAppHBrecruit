@@ -1,0 +1,90 @@
+<!--pages/resume_logo_jw/index.wxml-->
+<navbar parameter='{{parameter}}'></navbar>
+<wxs src='../../utils/filter.wxs' module='filters' />
+<view class="person-infor">
+  <view class="main-title">
+    <view class="title-num">
+      <text class="title-step">3</text>/<text>3</text>
+    </view>
+    <view class="title-text">请填写求职意向</view>
+  </view>
+  <view class="page-body">
+    <form catchsubmit="formSubmit" catchreset="formReset">
+    <!-- 求职状态 -->
+      <view class="section page-section">
+        <view class="page-section-title">求职状态</view>
+        <picker bindchange="onPickerChangeJWant" mode="selector" value="{{wantArray.label}}"  range-key="{{'label'}}"  range="{{wantArray}}"  >
+          <view class="section-select">
+            <input class="weui-input picker" name="jwIndex" value="{{filters.filter(wantArray,jwIndex)}}" placeholder="请选择你的求职状态" />
+            <text class="iconfont icon-xiangyou icon-color"></text>
+          </view>
+        </picker>
+      </view>
+      <!-- 到岗时间 -->
+      <view class="section page-section">
+        <view class="page-section-title">到岗时间</view>
+        <picker bindchange="onPickerChangeInTime" mode="selector" value="{{inTime.value}}"   range-key="{{'label'}}"  range="{{inTime}}"  >
+          <view class="section-select">
+            <input class="weui-input picker" name="in_time" value="{{filters.filter(inTime,in_time)}}" placeholder="请选择你的到岗时间" />
+            <text class="iconfont icon-xiangyou icon-color"></text>
+          </view>
+        </picker>
+      </view>
+      <!-- 工作城市 -->
+      <view class="page-section">
+        <!--条件选择-->
+        <view class="page-section-title">工作城市</view>
+        <picker mode="region" bindchange="onRegionChangeCity" value="{{region}}" >
+          <view class="section-select">
+            <input class="weui-input" name="region" value="{{region}}" placeholder="请选择你的工作城市" />
+            <text class="iconfont icon-xiangyou icon-color"></text>
+          </view>
+        </picker>
+      </view>
+      <!-- 期望职位 -->
+      <view class="page-section">
+        <view class="page-section-title">期望职位</view>
+        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiObjArray}}" range-key="{{'cate_name'}}">
+         <view class="section-select">
+            <input class="weui-input" name="post_name" value="{{post_name}}" placeholder="请选择期望职位" />
+            <text class="iconfont icon-xiangyou icon-color"></text>
+          </view>
+        </picker>
+      </view>
+      <!-- 期望薪资 -->
+      <view class="section ">
+         <view class="page-section-title">期望薪资</view>
+        <view class="salary-select">
+          <picker  value="{{min_salary}}" mode="selector" value="{{salaryNumber.value}}"  range-key="{{'label'}}" range="{{salaryNumber}}"  bindchange="onMinSalary">
+            <view  class="select">
+              <input class="weui-input" name="min_salary" value="{{filters.filter(salaryNumber,min_salary)}}" placeholder="最小薪资" />
+              <text class="iconfont icon-xiangyou icon-color"></text>
+            </view>
+          </picker>
+          <view class="interval"></view>
+          <picker  value="{{max_salary}}" mode="selector" value="{{salaryNumber.value}}"  range-key="{{'label'}}"  range="{{salaryNumber}}"  bindchange="onMaxSalary"  >
+            <view class="select" >
+              <input class="weui-input" name="max_salary" value="{{filters.filter(salaryNumber,max_salary)}}" placeholder="最大薪资" />
+              <text class="iconfont icon-xiangyou icon-color"></text>
+            </view>
+          </picker>
+        </view>
+      </view>
+      <!-- 职位类型 -->
+      <view class="section page-section">
+         <view class="page-section-title">职位类型</view>
+        <picker bindchange="onPickerChangeWorkType" mode="selector" value="{{workType.label}}"  range-key="{{'label'}}"  range="{{workType}}">
+          <view class="section-select">
+            <input class="weui-input picker" name="workTypeIndex" value="{{filters.filter(workType,workTypeIndex)}}" placeholder="请选择职位类型" />
+            <text class="iconfont icon-xiangyou icon-color"></text>
+          </view>
+        </picker>
+      </view>
+      <view class="margin-bottom108"></view>
+      <view class="btn-area">
+        <button class="btn-area-butt" formType="submit">提交保存</button>
+      </view>
+    </form>
+  </view>
+
+</view>

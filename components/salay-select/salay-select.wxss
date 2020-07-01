@@ -1,0 +1,54 @@
+
+.salay-popup{
+  width: 100%;
+  font-family:PingFang SC;
+  /* padding: 20rpx 20rpx 0 20rpx; */
+}
+.salay-popup .title{
+  font-size: 28rpx;
+  color: #999999;
+  font-weight:bold;
+  margin-bottom: 20rpx;
+}
+.salay-name{
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18rpx 0;
+  margin-bottom: 20rpx;
+  font-size: 28rpx;
+}
+.salay-popup .salay-list{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+.selection{
+  border: 2rpx solid #05D797;
+  color: #05D797;
+}
+.no{
+  border: 2rpx solid #999999;
+  color: #999999;
+}
+.mask{
+  width:100%;
+  height:100%;
+  position:fixed;
+  background-color:#999;
+  z-index:1;
+  top:0;
+  left:0;
+  opacity:0.5;
+}
+.salay-popup .content{
+  position:fixed;
+  width: 100%;
+  background-color:#fff;
+  z-index:999;
+  /* top: 330rpx; */
+  padding: 20rpx 20rpx 0 20rpx;
+  /* border: 1rpx solid red; */
+}

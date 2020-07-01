@@ -1,0 +1,12 @@
+<!--pages/user_instructions/user_instructions.wxml-->
+<navbar parameter='{{parameter}}'></navbar>
+<view class="instruction">
+  <view class="instruction-item" wx:for="{{instructionsList}}" wx:key="id">
+    <view class="question">
+      <text>{{item.question}}</text>
+    </view>
+    <view class="answer">
+      <text>{{item.answer}}</text>
+    </view>
+  </view>
+</view>

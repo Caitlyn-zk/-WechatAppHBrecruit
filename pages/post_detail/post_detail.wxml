@@ -1,0 +1,86 @@
+<!--pages/post-detail/post-detail.wxml-->
+<navbar parameter='{{parameter}}'></navbar>
+<wxs src="../../utils/filter.wxs" module="filter" />
+<!-- <text></text> -->
+<view class="post-detail-main" wx:if="{{detailData !== null}}">
+  <!-- 姓名 -->
+  <view class="post-detail-info">
+    <view class="post-title clearfix">
+      <view class="post-detail-info-button fr">{{filter.filter(mainSalary,detailData.min_salary)+'-'+filter.filter(mainSalary,detailData.max_salary)}}</view>
+      <view class="post-detail-info-name title-nowrap">{{detailData.post_name}}</view>
+    </view>
+    <view class="user-info">
+      <text class="work-for">{{filter.filter(workLife,detailData.work_life)}}</text><text class="line">|</text>
+      <text class="age">{{filter.filter(minEdu,detailData.min_edu)}}</text><text class="line">|</text>
+      <text class="area">{{filter.filter(workType,detailData.work_type)}}</text>
+    </view>
+    <view class="address">
+      <text class="iconfont icon-weizhi mp-icon"></text>
+      <text wx:for="{{detailData.post_address}}"
+            wx:for-item="item" 
+            wx:for-index="index"
+            wx:key="id" wx:if="{{index < 1}}">{{item.area1_name}}{{item.area2_name}}{{item.area3_name}}{{item.detail}}</text>
+    </view>
+  </view>
+  <!-- 职位描述 -->
+  <view class="post-detail-workfor">
+  <!-- good_staff -->
+    <view class="post-title">
+      <image src="/images/icon/icon-edu.png" class="icon"></image>
+      <text class="title">职位描述</text>
+    </view>
+    <block>
+      <view class="post-detail-workfor-info">
+      <!-- {{detailData.post_desc}} -->
+      <!--  wx:for="{{detailData.post_desc}}" wx:key="{{1}}" -->
+        <rich-text class="decs-text" nodes="{{detailData.post_desc}}"></rich-text>
+      </view>
+    </block>
+  </view>
+  <!-- 公司信息 -->
+  <view class="post-detail-workfor">
+    <view class="post-title">
+      <image src="/images/icon/icon-company.png" class="icon"></image>
+      <text class="title">公司信息</text>
+    </view>
+    <view class="company-main">
+      <view class="company-logo">
+        <image src="{{'http://cdn.65ph.com/'+detailData.org_logo}}"></image>
+      </view>
+      <view class="company-info">
+        <view class="company-name">{{detailData.org_name}}</view>
+        <view class="user-info" wx:for="{{detailData.post_address}}" 
+            wx:for-item="item" 
+            wx:for-index="index"
+            wx:key="index"  wx:if="{{index < 1}}">
+            {{item.area2_name}}
+          <text class="line">|</text>
+          <text class="age">{{filter.filter(compayScale,detailData.org_scale)}}</text><text class="line">|</text>
+          <text>{{filter.filter(industryNeighborhood,detailData.org_type)}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="similar-position">
+    <text>-相似职位-</text>
+  </view>
+  <view class="similar-position-list">
+    <block wx:for="{{detailData.resemble_post}}" wx:key='index'>
+      <post-item item="{{item}}" good_staff="{{good_staff}}" data-postid="{{item.post_id}}" bind:tap="onPostDetaill"></post-item>
+    </block>
+  </view>
+  <view class="detail-but">
+    <button class="detail-but-follow" open-type="share" plain="true">
+      <view class="detail-but-follow-text"><image src="../../images/follow-but.png"></image></view>
+      <view class="detail-fenxang-text"><text>分享</text></view>
+    </button>
+    <button class="detail-but-up" data-postId="{{detailData.post_id}}" bindtap="onApplyForPost" plain="true" disabled="{{detailData.delivery_status > 0 ? true : false}}">{{detailData.delivery_status > 0 ? '简历已投递':'投递简历'}}</button>
+  </view>
+</view>
+<view wx:else class="no-resume" >
+  <view class="tips">
+    <image src="/images/no-data.png" height="231rpx" class="tips-image"></image>
+    <!-- <view class="tips-text">暂无</view> -->
+  </view>
+</view>
+<authorize bind:onLoadFun='onLoadFun' isGoIndex='{{isGoIndex}}' iShidden="{{iShidden}}" isAuto="{{isAuto}}"></authorize>
